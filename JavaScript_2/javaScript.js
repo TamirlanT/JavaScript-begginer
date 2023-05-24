@@ -60,9 +60,8 @@ if (day > 31) {
 
 const userNumber = Number(prompt('Введите ваше число'))
 let num = userNumber
-let unit = Number
-let dozen = Number
-let hundred = Number
+let unit, dozen, hunded
+
 
 if (num > 10) {
     unit = num % 10
