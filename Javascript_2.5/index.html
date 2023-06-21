@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .heading {
+            display: flex;
+            justify-content: center;
+            padding-top: 24px;
+            padding-bottom: 24px;
+        }
+
+        .products {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+
+        }
+
+
+        .products__card {
+            display: flex;
+            flex-wrap: wrap;
+            width: 200px;
+            height: 300px;
+            border: 1px solid black;
+            padding-left: 8px;
+            gap: 10px;
+        }
+
+        .products__image {
+            width: 200px;
+            height: 150px;
+
+        }
+
+        .products__title {
+            padding-top: 12px;
+        }
+
+        .products__price {
+            padding-bottom: 12px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Задание 1
+1. Поиск в интернете (бесплатные api примеры).
+2. Найти любые данные, на произвольную тему.
+3. Создать файл data.js.
+4. Создать переменную которая будет хранить данные из публичных api.
+
+Задание 2
+1. Создать файл index.html.
+2. Подключить data.js.
+3. Сформировать контент из данных (картинка загловок и параграф).
+4. Добавить данный контент в вёрстку.
+5. * Добавить стили при необходимости (по желанию). -->
+
+
+    <script src="data.js"></script>
+
+    <script>
+        const bodyEl = document.querySelector('body')
+        const content = document.createElement('div')
+        content.classList.add('heading')
+        bodyEl.appendChild(content)
+
+        const head = document.createElement('h1')
+        head.textContent = 'All products'
+        content.appendChild(head)
+
+        const products = document.createElement('div');
+        products.classList.add('products')
+        bodyEl.appendChild(products)
+
+        const prodEl = document.querySelector('.products')
+
+        // const data = JSON.parse(dataProd)
+
+
+        dataProd.forEach(el => {
+            const prodImg = document.createElement('img')
+            prodImg.src = el.images
+            prodImg.alt = 'image'
+            prodImg.classList.add('products__image')
+
+            const prodTitle = document.createElement('h3')
+            prodTitle.classList.add('products__title')
+            prodTitle.textContent = `Model: ${el.title}`
+
+            const prodPrice = document.createElement('p')
+            prodPrice.classList.add('products__price')
+            prodPrice.textContent = `Price: ${el.price}`
+
+            const prodCard = document.createElement('article')
+            prodCard.classList.add('products__card')
+
+            prodCard.appendChild(prodImg)
+            prodCard.appendChild(prodTitle)
+            prodCard.appendChild(prodPrice)
+
+            prodEl.appendChild(prodCard)
+
+        });
+    </script>
+</body>
+
+</html>
