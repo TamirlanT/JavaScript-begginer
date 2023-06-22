@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<div class="content center">
+    <div class="featured__items center">
+        <div class="featured__heading">Fetured Items</div>
+        <p class="featured__description">Shop for items based on what we featured in this week</p>
+    </div>
+    <div class="products"></div>
+    <div class="content__buttons">
+        <button class="content__button">Browse All Product</button>
+    </div>
+
+</div>
+
+<script src="data.js"></script>
+<script>
+    const dataProds = JSON.parse(dataProducts)
+    console.log(dataProds);
+
+    dataProds.forEach(el => {
+        const prodElems = document.querySelector('.products')
+
+        const prodCard = document.createElement('div')
+        prodCard.classList.add('product__card')
+
+        const prodImgBox = document.createElement('a')
+        prodImgBox.classList.add('product__imgbox')
+
+        const prodImg = document.createElement('img')
+        prodImg.classList.add('content__img')
+        prodImg.src = `${el.img}`
+        prodImg.alt = 'content__img'
+
+        const prodLink = document.createElement('a')
+        prodLink.classList.add('prod__link')
+        prodLink.href = '#'
+        const prodTitle = document.createElement('p');
+        prodTitle.classList.add('product__title')
+        prodTitle.textContent = `${el.link}`
+
+        const prodDesc = document.createElement('p')
+        prodDesc.classList.add('product__description')
+        prodDesc.textContent = `${el.description}`
+
+        const prodPrice = document.createElement('p')
+        prodPrice.classList.add('product__price')
+        prodPrice.textContent = `${el.price}`
+
+
+        // add elems
+        prodImgBox.appendChild(prodImg)
+        prodLink.appendChild(prodTitle)
+        prodCard.appendChild(prodImgBox)
+        prodCard.appendChild(prodLink)
+        prodCard.appendChild(prodDesc)
+        prodCard.appendChild(prodPrice)
+
+        prodElems.appendChild(prodCard)
+    });
+</script>
+
+<body>
+
+</body>
+
+</html>

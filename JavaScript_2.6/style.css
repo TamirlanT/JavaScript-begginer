@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+.center {
+    padding-left: calc(50% - 570px);
+    padding-right: calc(50% - 570px);
+}
+.content{
+    padding-top: 96px;
+}
+.featured__items{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-bottom: 48px;
+        
+}
+.featured__heading{
+    color: #222;
+    font-size: 30px;
+    padding-bottom: 6px;
+}
+.featured__description{
+    color: #9F9F9F;
+    font-size: 14px;
+}
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.product__card {
+    width: 360px;
+    background-color: rgb(248, 248, 248, 1)
+}
+.product__imgbox{
+    padding-bottom: 26px;
+
+}
+.product__imgbox {
+    display: block;
+    position: relative;
+}
+.product__imgbox:before{
+     
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("img/darktheme.svg") no-repeat center center;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 0.4s ease;
+}
+    
+.product__imgbox:after {
+    content:  'Add to Cart';
+    position: absolute;
+    padding-left: 20px;
+    top: 40%;
+    left: 33%;
+    width: 110px;
+    height: 33px;
+    right: 0;
+    bottom: 0;
+    background: url("img/header_button_3.svg") no-repeat;
+    opacity: 0;
+    transition: opacity 0.4s linear;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+.product__imgbox:hover:before,
+.product__imgbox:hover:after {
+    opacity: .8;
+}
+.product__title{
+    color: #000;
+    font-size: 13px;
+    padding-bottom: 12px;
+    padding-left: 18px;
+    
+}
+.product__description{
+    color: #5D5D5D;
+    font-size: 14px;
+    font-weight: 300;
+    padding-bottom: 18px;
+    padding-left: 18px;
+}
+
+.product__price{
+    color: #F16D7F;
+    font-size: 16px;
+    padding-bottom: 20px;
+    padding-left: 18px;
+}
+
+.content__buttons{
+    display: flex;
+    justify-content: center;
+    padding-top: 48px;
+    padding-bottom: 96px;
+}
+.content__button{
+    width: 211px;
+    height: 47px;
+    background-color: rgba(241, 109, 127, 1);
+    border: none;
+
+    color: #FFF;
+    font-size: 16px;    
+}
+.content__button:hover {
+    background-color: #E1E1E1;
+    color: #F16D7F;
+    border: 1px solid #F16D7F;
+  }
