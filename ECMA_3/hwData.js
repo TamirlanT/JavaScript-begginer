@@ -123,3 +123,47 @@ order.addProduct(product2);
 
 console.log(order.getTotalPrice());
 console.log(order.products);
+
+
+/* Задача необязательная для выполнения
+
+Задача: Создать класс "Студент", который имеет приватные свойства "имя", "возраст" и "средний балл". Класс должен иметь методы для установки и получения значений свойств, а также метод для вывода информации о студенте.
+Про приватные свойства и методы - https://learn.javascript.ru/private-protected-properties-methods
+
+const student = new Student();
+student.setName('Питер Паркер);
+student.setAge(20);
+student.setAverageGrade(85);
+student.displayInfo(); */
+
+class Student {
+    #name;
+    #age;
+    #averageGrade;
+
+    setName(value) {
+        this.#name = value;
+    }
+
+    setAge(value) {
+        if (value <= 0) throw new Error('Значие не может быть ниже или равным "0"');
+        this.#age = value;
+    }
+
+    setAverageGrade(value) {
+        if (value < 0) throw new Error('Значие не может быть ниже "0"')
+        this.#averageGrade = value;
+    }
+
+    displyaInfo() {
+        console.log(`Name: ${this.#name} \nAge: ${this.#age} \nAverageGrade: ${this.#averageGrade}`);
+    }
+}
+
+const student = new Student;
+student.setName('Peter Parker');
+student.setAge(20);
+student.setAverageGrade(85);
+student.displyaInfo();
+
+// console.log(student.#name); -- error
