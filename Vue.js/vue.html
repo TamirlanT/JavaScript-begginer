@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Doc</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="first">
+        <p>{{ message }}</p>
+        <button v-on:click="reverseMessage">Перевернуть сообщение</button>
+
+
+        <p>{{ elems }}</p>
+        <button v-on:click="addNewElement">{{newElem}}</button>
+
+        <p v-for='el in elems' v-on:click="removeElement">{{el}}</p>
+    </div>
+    <script>
+        /*
+           Создать кнопку " Перевернуть". При клике на кнопку текст кнопки, должен перевернуться иотобразиться в
+           обратном порядке. есть список элементов. Пользователь может добавлять новые элементы списка стекстом
+           “Новый элемент списка” нажав на кнопку "Добавить".
+           * При клике на элемент списка он должен быть удален.(по желанию) */
+        const vue = new Vue({
+            el: '#first', data: {
+                message: 'А роза упала на лапу Азора', elems:
+                    ['el1', 'el2', 'el3', 'el4',], newElem: 'Новый Элемент',
+            }, methods: {
+                reverseMessage: function () {
+                    this.message = this.message.split('').reverse().join('')
+                }, addNewElement: function () {
+                    this.elems.push(this.newElem)
+                }, removeElement: function () { event.target.remove() }
+            },
+        }) </script>
+</body>
+
+
+</html>
