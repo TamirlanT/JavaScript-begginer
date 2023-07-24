@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <!-- Вы разрабатываете приложение для отображения и сортировки списка товаров. У вас есть массив объектов products, где каждый объект представляет товар с его названием и ценой. Вам необходимо отобразить список товаров и предоставить пользователю возможность сортировать товары по цене (по возрастанию и по убыванию). -->
+    <div id="app">
+        <p>Список товаров</p>
+        <ul class="products">
+            <li v-for="product in arr" :key="product.id">
+                товар: {{product.title}} --
+                цена: {{product.price}} руб.
+            </li>
+        </ul><br><br>
+        <button @click="sortByHigher">Сортировка по убыванию</button>
+        <button @click="sortByLower">Сортировка по возрастанию</button>
+    </div>
+
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                arr: [
+                    {
+                        id: 1,
+                        title: 'Пена Монтажная',
+                        price: '770'
+                    },
+                    {
+                        id: 2,
+                        title: 'Пистолет для пены',
+                        price: '327'
+                    },
+                    {
+                        id: 3,
+                        title: 'Очиститель пены',
+                        price: '350'
+                    },
+                    {
+                        id: 4,
+                        title: 'Удалитель пены',
+                        price: '298'
+                    },
+                ]
+            },
+            methods: {
+                sortByLower: function () {
+                    return this.arr.sort((a, b) => a.price - b.price);
+                },
+                sortByHigher: function () {
+                    return this.arr.sort((a, b) => b.price - a.price);
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
