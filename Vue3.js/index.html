@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="headerFooter.css">
+
+    <script src="components/main_vue.js"></script>
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+
+    <script src="components/kitchen.js"></script>
+    <script src="components/badroom.js"></script>
+    <script src="components/building.js"></script>
+    <script src="components/Kitchen-Planning.js"></script>
+    <script src="components/Architecture.js"></script>
+    <script src="components/bathroom.js"></script>
+
+</head>
+
+<body>
+
+    <div id="app" class="block">
+        <my-header></my-header>
+
+        <div class="banner">
+            <img src="img/Photo.jpg" alt="banner">
+        </div>
+
+
+
+        <div class="content center">
+            <component :is="changeTabs"></component>
+
+
+            <div class="tags">
+                <h2 class="tag__title">Tags</h2>
+                <div class="tag__buttons">
+                    <button class="tag__button" @click="currentTab = nameButton" v-for="nameButton in nameButtons"
+                        :key="nameButton.id">
+                        {{ nameButton }}
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <my-footer></my-footer>
+    </div>
+
+
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello',
+                nameButtons: ['kitchen', 'badroom', 'building', 'Architecture', 'Kitchen-Planning', 'Bathroom'],
+                currentTab: 'kitchen',
+            },
+            computed: {
+                changeTabs() {
+                    return `change-${this.currentTab}`
+                }
+            },
+
+        })
+    </script>
+</body>
+
+</html>
