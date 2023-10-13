@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Оставьте отзыв о продукте</h1>
+
+    <div class="product">
+        <h2>Наши продукты</h2>
+        <label>
+            Напишите название продукта
+            <form class="product__box" name="product">
+                <textarea class="product__textarea" rows="7" cols="40" name="message"></textarea>
+            </form>
+        </label>
+    </div>
+
+    <div class="comments">
+        <h2>Оставьте Ваш отзыв</h2>
+        <label>
+            Комментарий:
+            <form class="comment__box" name="comment">
+                <textarea class="comment__textarea" rows="7" cols="40" name="message"></textarea>
+            </form>
+        </label>
+    </div>
+
+    <button class="save__btn">Сохранить комментарий</button>
+
+    <button class="clear__btn">Очистить localStorage</button>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
