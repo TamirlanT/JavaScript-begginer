@@ -1,0 +1,20 @@
+.lesson__curentPersons {
+    visibility: visible;
+}
+
+.lesson__curentPersons::before {
+    content: 'Количество записей: ';
+}
+
+
+.lesson__persons::before {
+    content: 'Группа из: ';
+}
+
+.lesson__persons::after {
+    content: ' человек';
+}
+
+.lesson__time::before {
+    content: 'Начало заниятия: ';
+}
