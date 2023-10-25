@@ -1,0 +1,30 @@
+.image__previous::before {
+    content: '◄';
+}
+
+.image__next::before {
+    content: '►';
+}
+
+.image {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+    /* Убираем маркеры */
+}
+
+.pagination__list {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-start;
+}
