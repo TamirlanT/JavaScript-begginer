@@ -1,0 +1,62 @@
+body {
+    background: radial-gradient(circle, white, grey);
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 56px;
+}
+
+#photo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+
+.photo {
+    /* flex: 1 1 calc(33.33% - 20px); */
+    margin: 10px;
+    border: 15px solid #ccc;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.photo-cart {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.photografer-name, .like-counter {
+    display: flex;
+    justify-content: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 32px;
+    gap: 12px;
+}
+
+.like-button {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    background-image: url('img/hand-draw-heart-icon-love-sign-design-free-png.webp');
+    background-size: cover;
+    cursor: pointer;
+}
+
+.like-button.active {
+    background-image: url('img/pngimg.com\ -\ heart_PNG51158.png');
+}
+
+.like-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
